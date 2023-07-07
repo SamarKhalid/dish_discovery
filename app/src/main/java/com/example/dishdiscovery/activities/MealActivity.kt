@@ -50,7 +50,6 @@ class MealActivity : AppCompatActivity() {
             mealToSave?.let {
                 mealDetailsMvvm.insertMeal(it)
                 Snackbar.make(binding.root, "Meal saved", Snackbar.LENGTH_SHORT).show()
-                Log.d("NOT ERROR", "Meal Saved")
             }
 
         }
