@@ -19,11 +19,6 @@ Seamlessly navigate to YouTube to watch step-by-step dish preparation videos.
 - View Binding for a streamlined and interactive user interface.
 - Glide for efficient image loading and caching.
 
-# Installation
-- Clone the repository: git clone https://github.com/yourusername/dish-discovery.git
-- Open the project in Android Studio.
-- Build and run the app on an Android device or emulator.
-
 # Screenshots
 - ![Screenshot_1689181703](https://github.com/SamarKhalid/dish_discovery/assets/77341133/ffed6ac7-ac09-48df-afb7-db842e2557d3)
 
