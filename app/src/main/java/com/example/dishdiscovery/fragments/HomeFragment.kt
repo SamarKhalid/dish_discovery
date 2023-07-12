@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.dishdiscovery.R
 import com.example.dishdiscovery.activities.CategoryMealsActivity
+import com.example.dishdiscovery.activities.MainActivity
 import com.example.dishdiscovery.activities.MealActivity
 import com.example.dishdiscovery.adapters.CategoriesAdapter
 import com.example.dishdiscovery.adapters.SuggestAdapter
@@ -36,8 +38,7 @@ class HomeFragment : Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        homeMvvm = ViewModelProvider(this)[HomeViewModel::class.java]
-
+        homeMvvm = (activity as MainActivity).viewModel
         suggestedMealsAdapter = SuggestAdapter()
         categoriesAdapter = CategoriesAdapter()
     }
@@ -67,6 +68,14 @@ class HomeFragment : Fragment(){
         homeMvvm.getCategories()
         observerCategories()
         onCategoryClick()
+
+        searchButtonClick()
+    }
+
+    private fun searchButtonClick() {
+        homeBinding.imgSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
     }
 
     private fun prepareCategoriesRecyclerView(){

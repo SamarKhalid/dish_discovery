@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.dishdiscovery.databinding.CategoryMealBinding
+import com.example.dishdiscovery.databinding.MealItemBinding
 import com.example.dishdiscovery.services.MealsByCategory
 
 class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.CategoryMealsViewHolder>() {
     lateinit var onItemClick: ((MealsByCategory) -> Unit)
     private var mealsList = ArrayList<MealsByCategory>()
 
-    class CategoryMealsViewHolder(val binding: CategoryMealBinding) :
+    class CategoryMealsViewHolder(val binding: MealItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     fun setMealsList(mealsList: List<MealsByCategory>) {
@@ -21,7 +21,7 @@ class CategoryMealsAdapter : RecyclerView.Adapter<CategoryMealsAdapter.CategoryM
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryMealsViewHolder {
         return CategoryMealsViewHolder(
-            CategoryMealBinding.inflate(
+            MealItemBinding.inflate(
                 LayoutInflater.from(parent.context)
             )
         )

@@ -19,7 +19,7 @@ class CategoryMealsViewModel: ViewModel() {
             override fun onResponse(call: Call<MealsByCategoryList>, response: Response<MealsByCategoryList>) {
                 if (response.body() != null) {
                     categoryMealsLiveData.value = response.body()!!.meals
-                    Log.d("catgeory meals",  "category meals loaded")
+                    Log.d("category meals",  "category meals loaded")
 
                 }
 

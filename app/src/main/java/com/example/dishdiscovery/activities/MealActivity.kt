@@ -1,13 +1,11 @@
 package com.example.dishdiscovery.activities
+
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.viewModelFactory
 import com.bumptech.glide.Glide
 import com.example.dishdiscovery.R
 import com.example.dishdiscovery.databinding.ActivityMealBinding
@@ -18,6 +16,7 @@ import com.example.dishdiscovery.viewModel.MealViewModel
 import com.example.dishdiscovery.viewModel.MealViewModelFactory
 import com.google.android.material.snackbar.Snackbar
 
+@Suppress("DEPRECATION")
 class MealActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMealBinding
     private lateinit var mealDetailsMvvm: MealViewModel
@@ -62,12 +61,12 @@ class MealActivity : AppCompatActivity() {
         }
     }
 
-    private var mealToSave : Meal? = null
+    private var mealToSave: Meal? = null
     private fun observerMealDetails() {
-        mealDetailsMvvm.observerMealDetailsLiveData().observe(this
+        mealDetailsMvvm.observerMealDetailsLiveData().observe(
+            this
         ) { t ->
-            val meal = t
-            mealToSave = meal
+            mealToSave = t
 
             onResponseCase()
             binding.area.text = t!!.strArea
@@ -106,21 +105,21 @@ class MealActivity : AppCompatActivity() {
 
     }
 
-    private fun loadingCase(){
-        binding.indicator.visibility= View.VISIBLE
-        binding.category.visibility= View.INVISIBLE
-        binding.area.visibility= View.INVISIBLE
-        binding.txtInstructions.visibility= View.INVISIBLE
-        binding.txtInstructionsDetails.visibility= View.INVISIBLE
-        binding.imgYoutube.visibility= View.INVISIBLE
+    private fun loadingCase() {
+        binding.indicator.visibility = View.VISIBLE
+        binding.category.visibility = View.INVISIBLE
+        binding.area.visibility = View.INVISIBLE
+        binding.txtInstructions.visibility = View.INVISIBLE
+        binding.txtInstructionsDetails.visibility = View.INVISIBLE
+        binding.imgYoutube.visibility = View.INVISIBLE
     }
 
-    private fun onResponseCase(){
-        binding.indicator.visibility= View.INVISIBLE
-        binding.category.visibility= View.VISIBLE
-        binding.area.visibility= View.VISIBLE
-        binding.txtInstructions.visibility= View.VISIBLE
-        binding.txtInstructionsDetails.visibility= View.VISIBLE
-        binding.imgYoutube.visibility= View.VISIBLE
+    private fun onResponseCase() {
+        binding.indicator.visibility = View.INVISIBLE
+        binding.category.visibility = View.VISIBLE
+        binding.area.visibility = View.VISIBLE
+        binding.txtInstructions.visibility = View.VISIBLE
+        binding.txtInstructionsDetails.visibility = View.VISIBLE
+        binding.imgYoutube.visibility = View.VISIBLE
     }
 }

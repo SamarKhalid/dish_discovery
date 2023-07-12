@@ -3,7 +3,6 @@ package com.example.dishdiscovery.activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.dishdiscovery.adapters.CategoryMealsAdapter
@@ -53,10 +52,10 @@ class CategoryMealsActivity : AppCompatActivity() {
     }
 
     private fun observerCategoryMeals() {
-        categoryMealsMvvm.observerCategoryMealsLiveData().observe(this, Observer { mealsList ->
+        categoryMealsMvvm.observerCategoryMealsLiveData().observe(this) { mealsList ->
             binding.categoryCount.text = mealsList.size.toString()
             categoryMealsAdapter.setMealsList(mealsList as ArrayList<MealsByCategory>)
-        })
+        }
     }
 
     private fun getCategoryName() {
