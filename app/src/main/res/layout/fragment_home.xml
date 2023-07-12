@@ -63,7 +63,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_170sdp"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 app:cardCornerRadius="@dimen/_20sdp"
                 app:cardUseCompatPadding="true"
@@ -77,9 +76,9 @@
 
                     <ImageView
                         android:id="@+id/img_random_meal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"/>
+                        android:layout_width="359dp"
+                        android:layout_height="204dp"
+                        android:scaleType="centerCrop" />
 
                     <com.google.android.material.progressindicator.LinearProgressIndicator
                         android:id="@+id/indicator"
@@ -112,7 +111,6 @@
                 android:id="@+id/suggest_recycler"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_100sdp"
-                android:layout_marginTop="@dimen/_10sdp"
                 app:layout_constraintStart_toStartOf="@id/header2"
                 app:layout_constraintTop_toBottomOf="@id/header2"></androidx.recyclerview.widget.RecyclerView>
 
@@ -134,7 +132,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 app:cardCornerRadius="@dimen/_20sdp"
                 app:cardUseCompatPadding="true"
